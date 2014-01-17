@@ -1,5 +1,6 @@
 from os.path import join, dirname, basename
 from voodoo import render_skeleton, prompt
+from os import system
 
 
 default_context = {
@@ -17,6 +18,7 @@ def new_project(path, options):
     data['project_name'] = prompt("Project name", basename(path))
     data['project_title'] = prompt("Project title", data['project_name'])
     render_skeleton(SKELETON_PATH, path, data=data, **options)
+    return data
 
 
 if __name__ == '__main__':
@@ -35,4 +37,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     da = vars(args)
-    new_project(da.pop('path'), da)
+    full_context = new_project(da.pop('path'), da)
+
+    # Now, make the first_setup zsh script executable
+    system('chmod a+x %(project_name)s/first_setup.zsh' % full_context)
+
