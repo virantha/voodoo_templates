@@ -42,6 +42,11 @@ git add .
 git commit -am "Setting up new project [[project_name]]"
 
 # Prompt if we want to push to remote git
+read -q "REPLY?Create remote repository at $github_remote [y/N]?"
+if [[ '[[' ]]  $REPLY == y [[ ']]' ]]; then
+    curl --data '{"name":"[[project_name]]", "description":"[[project_description]]"}' --user "[[github_username]]" https://api.github.com/user/repos
+fi
+
 read -q "REPLY?Push to remote repository $github_remote [y/N]?"
 if [[ '[[' ]]  $REPLY == y [[ ']]' ]]; then
     git push -u origin master
