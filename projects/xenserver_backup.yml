@@ -1,0 +1,15 @@
+author: Virantha N. Ekanayake
+author_email: virantha@gmail.com
+github_username: virantha
+copyright_year: 2014
+description: Backup your Xenserver VMs 
+
+project_title: Xenserver Backup
+
+# Code stuff
+project_name: xenserver_backup
+project_class: XenBackup
+
+
+
+

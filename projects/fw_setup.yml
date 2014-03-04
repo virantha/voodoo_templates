@@ -1,0 +1,15 @@
+author: Virantha N. Ekanayake
+author_email: virantha@gmail.com
+github_username: virantha
+copyright_year: 2014
+description: Easy way to migrate settings between different firewalls like Ipcop, Smoothwall, IPFire, etc
+
+project_title: Firewall Setup
+
+# Code stuff
+project_name: fw_setup
+project_class: FirewallSetup
+
+
+
+
